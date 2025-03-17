@@ -17,7 +17,7 @@ class CreateAppointmentsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('topic');
-            $table->string('duration');
+            $table->string('meeting_with');
             $table->string('status')->nullable();
             $table->datetime('start_time');
             $table->timestamps();

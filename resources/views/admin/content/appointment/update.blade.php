@@ -30,20 +30,16 @@
                 @enderror
 
                 <div class="form-group">
-                    <label for="">Duration</label>
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="number" id="" aria-describedby="" name="duration"
-                                    class="form-control @error('duration') is-invalid @enderror" style="width: 200px"
-                                    value="{{ $appointment->duration }}">
-                            </td>
-                            <td><label>&nbsp;&nbsp;&nbsp;Hour</label></td>
-                        </tr>
-                    </table>
+                    <label for="">Meeting With</label>
+
+                    <select class="form-control" aria-label="Default select example" name="meeting_with">
+                        <option value="Steve">Steve</option>
+                        <option value="John">John</option>
+                        <option value="Clark">Clark</option>
+                    </select>
                 </div>
 
-                @error('duration')
+                @error('meeting_with')
                     <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
                 @enderror
 

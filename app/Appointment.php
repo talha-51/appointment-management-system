@@ -8,6 +8,6 @@ class Appointment extends Model
 {
     // protected $guarded = [];
     protected $fillable = [
-        'name', 'topic', 'duration', 'status', 'start_time',
+        'name', 'topic', 'duration', 'status', 'start_time','meeting_with',
     ];
 }

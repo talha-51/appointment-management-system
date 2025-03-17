@@ -69,8 +69,9 @@ class AppointmentController extends Controller
         $inputs = \request()->validate([
             'name' => 'required',
             'topic' => 'required',
-            'duration' => 'required',
+            'meeting_with' => 'required',
             'start_time' => 'required',
+            'status' => '',
         ]);
 
 
@@ -117,7 +118,7 @@ class AppointmentController extends Controller
         $inputs = \request()->validate([
             'name' => 'required',
             'topic' => 'required',
-            'duration' => 'required',
+            'meeting_with' => '',
             'start_time' => 'required',
             'status' => '',
         ]);

@@ -29,19 +29,16 @@
                 @enderror
 
                 <div class="form-group">
-                    <label for="">Duration</label>
-                    <table>
-                        <tr>
-                            <td>
-                                <input type="number" id="" aria-describedby="" name="duration"
-                                    class="form-control @error('duration') is-invalid @enderror" style="width: 200px">
-                            </td>
-                            <td><label>&nbsp;&nbsp;&nbsp;Hour</label></td>
-                        </tr>
-                    </table>
+                    <label for="">Meeting With</label>
+
+                    <select class="form-control" aria-label="Default select example" name="meeting_with">
+                        <option value="Steve">Steve</option>
+                        <option value="John">John</option>
+                        <option value="Clark">Clark</option>
+                    </select>
                 </div>
 
-                @error('duration')
+                @error('meeting_with')
                     <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
                 @enderror
 
@@ -54,6 +51,8 @@
                 @error('start_time')
                     <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
                 @enderror
+
+                <input type="hidden" id="" aria-describedby="" name="status" value="pending">
 
                 <button type="submit" class="btn bg-sidebar text-white" name="submit">Submit</button>
             </form>
