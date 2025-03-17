@@ -1,0 +1,75 @@
+@extends('admin.dashboard')
+
+@section('content')
+    <h4>Update Appointment</h4>
+    <hr>
+
+    <div>
+        <form action="{{ route('appointment.update', $appointment->id) }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            @method('put')
+            <form>
+                <div class="form-group">
+                    <label for="">Enter Name</label>
+                    <input type="text" id="" aria-describedby="" name="name"
+                        class="form-control @error('name') is-invalid @enderror" value="{{ $appointment->name }}">
+                </div>
+
+                @error('name')
+                    <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
+                @enderror
+
+                <div class="form-group">
+                    <label for="">Meeting Topic</label>
+                    <input type="text" id="" aria-describedby="" name="topic"
+                        class="form-control @error('topic') is-invalid @enderror" value="{{ $appointment->topic }}">
+                </div>
+
+                @error('topic')
+                    <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
+                @enderror
+
+                <div class="form-group">
+                    <label for="">Duration</label>
+                    <table>
+                        <tr>
+                            <td>
+                                <input type="number" id="" aria-describedby="" name="duration"
+                                    class="form-control @error('duration') is-invalid @enderror" style="width: 200px"
+                                    value="{{ $appointment->duration }}">
+                            </td>
+                            <td><label>&nbsp;&nbsp;&nbsp;Hour</label></td>
+                        </tr>
+                    </table>
+                </div>
+
+                @error('duration')
+                    <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
+                @enderror
+
+                <div class="form-group">
+                    <label for="">Start Time</label>
+                    <input type="datetime-local" id="" aria-describedby="" name="start_time"
+                        class="form-control @error('start_time') is-invalid @enderror" style="width: 15%"
+                        value="{{ $appointment->start_time }}">
+                </div>
+
+                @error('start_time')
+                    <div class="alert alert-danger" style="margin-top: 10px">{{ $message }}</div>
+                @enderror
+
+                <div class="form-group">
+                    <label for="">Meeting Status</label>
+
+                    <select class="form-control" aria-label="Default select example" name="status">
+                        <option value="checked_in">Checked In</option>
+                        <option value="missed">Missed</option>
+                    </select>
+                </div>
+
+
+                <button type="submit" class="btn bg-sidebar text-white" name="submit">Submit</button>
+            </form>
+        </form>
+    </div>
+@endsection
